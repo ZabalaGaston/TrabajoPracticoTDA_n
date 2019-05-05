@@ -12,7 +12,7 @@ public class PilaEstatica implements Pila {
 	
 	@Override
 	public boolean push(Object dato) {
-		if(tope != pila.length-1)
+		if(tope == pila.length-1)
 			return false;
 		tope++;
 		pila[tope] = dato;
@@ -22,7 +22,7 @@ public class PilaEstatica implements Pila {
 	@Override
 	public Object pop() { //desapila el dato apuntado por el tope de la pila
 		if(tope!=-1){
-			return pila[--tope];
+			return pila[tope--];
 		}		
 		return null;
 	}
@@ -37,7 +37,7 @@ public class PilaEstatica implements Pila {
 	
 	@Override
 	public boolean isEmpty() {
-		return tope!=-1;
+		return tope==-1;
 	}
 	
 	@Override
