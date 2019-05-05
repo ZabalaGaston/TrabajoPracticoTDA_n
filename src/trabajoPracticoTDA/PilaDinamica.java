@@ -22,8 +22,8 @@ public class PilaDinamica implements Pila{
 	@Override
 	public Object pop() { //desapila el dato apuntado por el tope de la pila
 		if (!objects.isEmpty()) {
-			Object n = objects.get(objects.size());
-			objects.remove(objects.size());
+			Object n = objects.get(objects.size()-1);
+			objects.remove(objects.size()-1);
 			return n;			
 		}
 		return null;
@@ -31,7 +31,7 @@ public class PilaDinamica implements Pila{
 	
 	@Override
 	public Object peek() {
-		return objects.get(objects.size());
+		return objects.get(objects.size()-1);
 	}
 	
 	@Override

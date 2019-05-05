@@ -1,33 +1,32 @@
 package test;
-
 import org.junit.Assert;
 import org.junit.Test;
 
-import trabajoPracticoTDA.PilaEstatica;
+import trabajoPracticoTDA.PilaDinamica;
 
-public class PilaTest {
+public class PilaDinamicaTest {
 	
-	private PilaEstatica pila;
+	private PilaDinamica pila;
 
 	@Test
 	public void testPush() {
-		pila = new PilaEstatica(10);
+		pila = new PilaDinamica();
 		pila.push(1);
 		Assert.assertEquals(Integer.valueOf(1), pila.peek());	
 	}
 	
 	@Test
 	public void testPop() {
-		pila = new PilaEstatica(10);
+		pila = new PilaDinamica();
 		pila.push(1);
 		pila.push(2);
-
-		Assert.assertEquals(Integer.valueOf(2), pila.pop());
+		Integer prueba = (Integer) pila.pop();
+		Assert.assertEquals(Integer.valueOf(2),prueba);
 	}
 	
 	@Test
 	public void testPeek() {
-		pila = new PilaEstatica(10);
+		pila = new PilaDinamica();
 		pila.push(1);
 		pila.push(2);
 		pila.push(3);
@@ -37,13 +36,13 @@ public class PilaTest {
 	
 	@Test
 	public void testIsEmpty () {
-		pila = new PilaEstatica(10);
+		pila = new PilaDinamica();
 		Assert.assertEquals(true, pila.isEmpty());
 	}
 	
 	@Test
 	public void testEmpty () {
-		pila = new PilaEstatica(10);
+		pila = new PilaDinamica();
 		pila.push(1);
 		pila.push(2);
 		pila.empty();
