@@ -31,7 +31,7 @@ public class ColaEstatica implements Cola {
 			inicio = 0;
 			fin = -1;
 		}
-		else if (inicio == cola.length)
+		else if (inicio == cola.length-1)
 			inicio = 0;
 		else
 			inicio++;
