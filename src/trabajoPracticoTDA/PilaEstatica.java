@@ -2,16 +2,16 @@ package trabajoPracticoTDA;
 
 public class PilaEstatica implements Pila {
 
-	private Integer pila[];
+	private Object pila[];
 	private int tope;
 	
 	public PilaEstatica(int size) {
-		pila = new Integer[size];
+		pila = new Object[size];
         tope = -1;
 	}
 	
 	@Override
-	public boolean push(Integer dato) {
+	public boolean push(Object dato) {
 		if(tope != pila.length-1)
 			return false;
 		tope++;
@@ -20,7 +20,7 @@ public class PilaEstatica implements Pila {
 	}
 
 	@Override
-	public Integer pop() { //desapila el dato apuntado por el tope de la pila
+	public Object pop() { //desapila el dato apuntado por el tope de la pila
 		if(tope!=-1){
 			return pila[--tope];
 		}		
@@ -28,7 +28,7 @@ public class PilaEstatica implements Pila {
 	}
 	
 	@Override
-	public Integer peek() {
+	public Object peek() {
 		if(tope!=-1){
 			return pila[tope];
 		}		

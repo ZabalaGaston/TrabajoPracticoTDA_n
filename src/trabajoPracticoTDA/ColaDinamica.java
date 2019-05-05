@@ -4,36 +4,36 @@ import java.util.ArrayList;
 
 public class ColaDinamica implements Cola{
 
-	private ArrayList<Integer> objects;
+	private ArrayList<Object> objects;
 	
 	public ColaDinamica() {
-		 objects = new ArrayList<Integer> ();
+		 objects = new ArrayList<Object> ();
 	}
 
-	public ColaDinamica(ArrayList<Integer> objects) {
+	public ColaDinamica(ArrayList<Object> objects) {
 		super();
 		this.objects = objects;
 	}
 
 	@Override
-	public boolean offer(Integer dato) {
+	public boolean offer(Object dato) {
 		return objects.add(dato);
 	}
 
 	@Override
-	public Integer poll() {
+	public Object poll() {
 		if (!objects.isEmpty()) {
-			Integer n = objects.get(0);
-			objects.remove(n);
-			return n;	
+			Object n = objects.get(0);
+			objects.remove(0);
+			return n;
 		}
 		return null;
 	}
 
 	@Override
-	public Integer peek() {
+	public Object peek() {
 		if (!objects.isEmpty()) {
-			Integer n = objects.get(0);
+			Object n = objects.get(0);
 			return n;	
 		}
 		return null;
@@ -46,6 +46,6 @@ public class ColaDinamica implements Cola{
 
 	@Override
 	public void empty() {
-		objects = new ArrayList<Integer>();
+		objects.clear();
 	}
 }

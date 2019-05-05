@@ -5,32 +5,38 @@ import java.util.Collections;
 
 public class Lista {
 
-	private ArrayList<Integer> objects;
+	private ArrayList<Object> objects;
 	
 	public Lista() {
-		 objects = new ArrayList<Integer> ();
+		 objects = new ArrayList<Object> ();
 	}
 
-	public boolean pushBack(Integer dato) { //Inserta un elemento al final
+	public boolean pushBack(Object dato) { //Inserta un elemento al final
 		return objects.add(dato);
 	}
 	
-	public Integer popBack() { //retorna y borra el elemento del final
+	public Object popBack() { //retorna y borra el elemento del final
 		if (!objects.isEmpty()) {
-			Integer n = objects.get(objects.size());
-			objects.remove(n);
+			Object n = objects.get(objects.size());
+			objects.remove(objects.size());
 			return n;			
 		}
 		return null;
 	}
 	
-	public boolean pushFront(Integer dato) {
+	public boolean pushFront(Object dato) {
 		int n = objects.size();
 		objects.add(0,dato);
 		return n != objects.size();
 	}
 	
-	public boolean remove(Integer dato) { //
+	public Object popFront() {
+		Object n = objects.get(0);
+		objects.remove(0);
+		return n;
+	}
+	
+	public boolean remove(Object dato) { //
 		return objects.remove(dato);
 	}
 	
@@ -38,7 +44,7 @@ public class Lista {
 		 Collections.reverse(objects);
 	}
 	
-	public boolean insertarAt(int posicion, Integer dato) {
+	public boolean insertarAt(int posicion, Object dato) {
 
 		int n = objects.size();
 		objects.add(posicion, dato);		
@@ -56,21 +62,20 @@ public class Lista {
 	}
 	
 	public void empty() {
-		objects = new ArrayList<Integer>();
+		objects.clear();
 	}
 	
-	public Integer search(Integer dato) {
-		for (Integer obj : objects) {
-			if (((Integer) obj).compareTo(dato) == 0)
+	public Object search(Object dato) {
+		for (Object obj : objects) {
+			if (obj.equals(dato))
 				return obj;
 		}
 		return null;
 	}
 	
-	public Integer searchAt(int posicion) {
+	public Object searchAt(int posicion) {
 		if(objects.size()>= posicion)
-			return objects.get(posicion-1);
-		
+			return objects.get(posicion-1);		
 		return null;
 	}
 	

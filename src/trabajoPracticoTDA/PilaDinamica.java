@@ -3,34 +3,34 @@ import java.util.ArrayList;
 
 public class PilaDinamica implements Pila{
 
-	private ArrayList<Integer> objects;
+	private ArrayList<Object> objects;
 	
 	public PilaDinamica() {
-		 objects = new ArrayList<Integer> ();
+		 objects = new ArrayList<Object> ();
 	}
 
-	public PilaDinamica(ArrayList<Integer> objects) {
+	public PilaDinamica(ArrayList<Object> objects) {
 		super();
 		this.objects = objects;
 	}
 	
 	@Override
-	public boolean push(Integer dato) {
+	public boolean push(Object dato) {
 		return objects.add(dato);
 	}
 
 	@Override
-	public Integer pop() { //desapila el dato apuntado por el tope de la pila
+	public Object pop() { //desapila el dato apuntado por el tope de la pila
 		if (!objects.isEmpty()) {
-			Integer n = objects.get(objects.size());
-			objects.remove(n);
+			Object n = objects.get(objects.size());
+			objects.remove(objects.size());
 			return n;			
 		}
 		return null;
 	}
 	
 	@Override
-	public Integer peek() {
+	public Object peek() {
 		return objects.get(objects.size());
 	}
 	
@@ -41,6 +41,6 @@ public class PilaDinamica implements Pila{
 	
 	@Override
 	public void empty(){
-		objects = new ArrayList<Integer>();
+		objects = new ArrayList<Object>();
 	}
 }

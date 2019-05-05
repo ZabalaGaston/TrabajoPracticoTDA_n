@@ -2,9 +2,9 @@ package trabajoPracticoTDA;
 
 public interface Cola {
 
-	public boolean offer(Integer dato);
-	public Integer poll();
-	public Integer peek();
+	public boolean offer(Object dato);
+	public Object poll();
+	public Object peek();
 	public boolean isEmpty();
 	public void empty();
 }

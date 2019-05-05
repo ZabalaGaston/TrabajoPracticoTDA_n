@@ -5,17 +5,17 @@ public class PilaCL implements Pila{
 	private Lista lista;
 
 	@Override
-	public boolean push(Integer dato) {
+	public boolean push(Object dato) {
 		return lista.pushBack(dato);
 	}
 
 	@Override
-	public Integer pop() {
+	public Object pop() {
 		return lista.popBack();
 	}
 
 	@Override
-	public Integer peek() {
+	public Object peek() {
 		return lista.searchAt(0);
 	}
 
