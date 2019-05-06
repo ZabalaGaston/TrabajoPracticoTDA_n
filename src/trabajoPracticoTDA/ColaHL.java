@@ -2,22 +2,35 @@ package trabajoPracticoTDA;
 
 public class ColaHL extends Lista implements Cola{
 
+	
+	public ColaHL() {
+		super();
+	}
+
 	@Override
 	public boolean offer(Object dato) {
-		// TODO Auto-generated method stub
-		return false;
+		return super.pushBack(dato);
 	}
 
 	@Override
 	public Object poll() {
-		// TODO Auto-generated method stub
-		return null;
+		return super.popFront();
 	}
 
 	@Override
 	public Object peek() {
-		// TODO Auto-generated method stub
-		return null;
+		Object dato = super.searchAt(1);
+		return dato;
+	}
+
+	@Override
+	public boolean isEmpty() {
+		return super.isEmpty();
+	}
+
+	@Override
+	public void empty() {
+		super.empty();
 	}
 
 	

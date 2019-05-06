@@ -4,6 +4,10 @@ public class ColaCL implements Cola {
 
 	private Lista lista;
 	
+	public ColaCL(){
+		lista = new Lista();
+	}
+	
 	@Override
 	public boolean offer(Object dato) {
 		return lista.pushBack(dato);
@@ -11,14 +15,12 @@ public class ColaCL implements Cola {
 
 	@Override
 	public Object poll() {
-		Object dato = lista.searchAt(0);
-		lista.remove(dato);
-		return dato;
+		return lista.popFront();
 	}
 
 	@Override
 	public Object peek() {
-		Object dato = lista.searchAt(0);
+		Object dato = lista.searchAt(1);
 		return dato;
 	}
 
