@@ -12,7 +12,11 @@ public class PilaTest {
 	@Test
 	public void testPush() {
 		pila = new PilaEstatica(10);
+		long startTime = System.currentTimeMillis();
 		pila.push(1);
+		long endTime = System.currentTimeMillis();
+		long tiempo = endTime-startTime;
+		System.out.println("Tiempo ejecucion: "+tiempo);
 		Assert.assertEquals(Integer.valueOf(1), pila.peek());	
 	}
 	
@@ -21,33 +25,46 @@ public class PilaTest {
 		pila = new PilaEstatica(10);
 		pila.push(1);
 		pila.push(2);
-
+		long startTime = System.currentTimeMillis();
 		Assert.assertEquals(Integer.valueOf(2), pila.pop());
+		long endTime = System.currentTimeMillis();
+		long tiempo = endTime-startTime;
+		System.out.println("Tiempo ejecucion: "+tiempo);
 	}
 	
 	@Test
 	public void testPeek() {
-		pila = new PilaEstatica(10);
+		pila = new PilaEstatica(10);		
 		pila.push(1);
 		pila.push(2);
 		pila.push(3);
-		
+		long startTime = System.currentTimeMillis();
 		Assert.assertEquals(Integer.valueOf(3), pila.peek());
+		long endTime = System.currentTimeMillis();
+		long tiempo = endTime-startTime;
+		System.out.println("Tiempo ejecucion: "+tiempo);
 	}
 	
 	@Test
 	public void testIsEmpty () {
 		pila = new PilaEstatica(10);
+		long startTime = System.currentTimeMillis();
 		Assert.assertEquals(true, pila.isEmpty());
+		long endTime = System.currentTimeMillis();
+		long tiempo = endTime-startTime;
+		System.out.println("Tiempo ejecucion: "+tiempo);
 	}
 	
 	@Test
 	public void testEmpty () {
-		pila = new PilaEstatica(10);
+		pila = new PilaEstatica(10);		
 		pila.push(1);
 		pila.push(2);
+		long startTime = System.currentTimeMillis();
 		pila.empty();
-		
+		long endTime = System.currentTimeMillis();
+		long tiempo = endTime-startTime;
+		System.out.println("Tiempo ejecucion: "+tiempo);
 		Assert.assertEquals(true, pila.isEmpty());
 	}
 
