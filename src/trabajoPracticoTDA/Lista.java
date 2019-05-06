@@ -17,8 +17,8 @@ public class Lista {
 	
 	public Object popBack() { //retorna y borra el elemento del final
 		if (!objects.isEmpty()) {
-			Object n = objects.get(objects.size());
-			objects.remove(objects.size());
+			Object n = objects.get(objects.size()-1);
+			objects.remove(objects.size()-1);
 			return n;			
 		}
 		return null;

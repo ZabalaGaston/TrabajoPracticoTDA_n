@@ -4,6 +4,10 @@ public class PilaCL implements Pila{
 
 	private Lista lista;
 
+	public PilaCL() {
+		lista = new Lista();
+	}
+
 	@Override
 	public boolean push(Object dato) {
 		return lista.pushBack(dato);
@@ -16,7 +20,7 @@ public class PilaCL implements Pila{
 
 	@Override
 	public Object peek() {
-		return lista.searchAt(0);
+		return lista.searchAt(lista.size());
 	}
 
 	@Override
