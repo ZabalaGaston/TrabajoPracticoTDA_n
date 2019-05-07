@@ -11,11 +11,11 @@ public class Lista {
 		 objects = new ArrayList<Object> ();
 	}
 
-	public boolean pushBack(Object dato) { //Inserta un elemento al final
+	public boolean pushBack(Object dato) {//Inserta un elemento al final
 		return objects.add(dato);
 	}
 	
-	public Object popBack() { //retorna y borra el elemento del final
+	public Object popBack() {//retorna y borra el elemento del final
 		if (!objects.isEmpty()) {
 			Object n = objects.get(objects.size()-1);
 			objects.remove(objects.size()-1);
@@ -36,7 +36,7 @@ public class Lista {
 		return n;
 	}
 	
-	public boolean remove(Object dato) { //
+	public boolean remove(Object dato) {
 		return objects.remove(dato);
 	}
 	

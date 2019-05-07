@@ -15,7 +15,7 @@ public class ListaTest {
 		lista.pushBack(1);
 		long endTime = System.currentTimeMillis();
 		long tiempo = endTime-startTime;
-		System.out.println("Tiempo ejecucion: "+tiempo);
+		System.out.println("Lista - Tiempo ejecucion push back: " + tiempo);
 		Assert.assertEquals(Integer.valueOf(1), lista.popBack());	
 	}
 	
@@ -26,7 +26,7 @@ public class ListaTest {
 		lista.pushFront(3);
 		long endTime = System.currentTimeMillis();
 		long tiempo = endTime-startTime;
-		System.out.println("Tiempo ejecucion: "+tiempo);
+		System.out.println("Lista - Tiempo ejecucion push front: " + tiempo);
 		Assert.assertEquals(Integer.valueOf(3), lista.popFront());
 	}
 	
@@ -38,14 +38,32 @@ public class ListaTest {
 		Assert.assertEquals(true, lista.remove(1));
 		long endTime = System.currentTimeMillis();
 		long tiempo = endTime-startTime;
-		System.out.println("Tiempo ejecucion: "+tiempo);
+		System.out.println("Lista - Tiempo ejecucion remove: " + tiempo);
 	}
-	
-	
 	
 	@Test
 	public void testReverse () {
-		//??
+		lista = new Lista();
+		long startTime = System.currentTimeMillis();
+		lista.pushBack(1);
+		lista.pushBack(2);
+		lista.pushBack(3);
+		lista.pushBack(4);
+		
+		Assert.assertEquals(Integer.valueOf(1), lista.searchAt(1));
+		Assert.assertEquals(Integer.valueOf(2), lista.searchAt(2));
+		Assert.assertEquals(Integer.valueOf(3), lista.searchAt(3));
+		Assert.assertEquals(Integer.valueOf(4), lista.searchAt(4));
+		
+		lista.reverse();
+		
+		Assert.assertEquals(Integer.valueOf(4), lista.searchAt(1));
+		Assert.assertEquals(Integer.valueOf(3), lista.searchAt(2));
+		Assert.assertEquals(Integer.valueOf(2), lista.searchAt(3));
+		Assert.assertEquals(Integer.valueOf(1), lista.searchAt(4));
+		long endTime = System.currentTimeMillis();
+		long tiempo = endTime-startTime;
+		System.out.println("Lista - Tiempo ejecucion reverse: " + tiempo);
 	}
 	
 	@Test
@@ -58,7 +76,7 @@ public class ListaTest {
 		lista.insertarAt(2, 10);
 		long endTime = System.currentTimeMillis();
 		long tiempo = endTime-startTime;
-		System.out.println("Tiempo ejecucion: "+tiempo);
+		System.out.println("Lista - Tiempo ejecucion insertAt: " + tiempo);
 		Assert.assertEquals(Integer.valueOf(4), lista.searchAt(2));
 	}
 	
@@ -72,7 +90,7 @@ public class ListaTest {
 		Assert.assertEquals(true,lista.eraseAt(2));
 		long endTime = System.currentTimeMillis();
 		long tiempo = endTime-startTime;
-		System.out.println("Tiempo ejecucion: "+tiempo);
+		System.out.println("Lista - Tiempo ejecucion eraseAt: " + tiempo);
 	}
 	@Test
 	public void testIsEmpty () {
@@ -81,9 +99,8 @@ public class ListaTest {
 		Assert.assertEquals(true, lista.isEmpty());
 		long endTime = System.currentTimeMillis();
 		long tiempo = endTime-startTime;
-		System.out.println("Tiempo ejecucion: "+tiempo);
+		System.out.println("Lista - Tiempo ejecucion isEmpty: "+tiempo);
 	}
-	
 	
 	@Test
 	public void testEmpty () {
@@ -94,7 +111,7 @@ public class ListaTest {
 		lista.empty();
 		long endTime = System.currentTimeMillis();
 		long tiempo = endTime-startTime;
-		System.out.println("Tiempo ejecucion: "+tiempo);		
+		System.out.println("Lista - Tiempo ejecucion empty: " + tiempo);		
 		Assert.assertEquals(true, lista.isEmpty());
 	}
 	
@@ -108,7 +125,7 @@ public class ListaTest {
 		Assert.assertEquals(Integer.valueOf(5), lista.searchAt(2));
 		long endTime = System.currentTimeMillis();
 		long tiempo = endTime-startTime;
-		System.out.println("Tiempo ejecucion: "+tiempo);
+		System.out.println("Lista - Tiempo ejecucion searchAt: " + tiempo);
 	}
 	
 	@Test
@@ -122,7 +139,7 @@ public class ListaTest {
 		Assert.assertEquals(Integer.valueOf(2), lista.search(2));
 		long endTime = System.currentTimeMillis();
 		long tiempo = endTime-startTime;
-		System.out.println("Tiempo ejecucion: "+tiempo);
+		System.out.println("Lista - Tiempo ejecucion search: " + tiempo);
 	}
 	
 	@Test
@@ -137,7 +154,6 @@ public class ListaTest {
 		Assert.assertEquals(5, lista.size());
 		long endTime = System.currentTimeMillis();
 		long tiempo = endTime-startTime;
-		System.out.println("Tiempo ejecucion: "+tiempo);
+		System.out.println("Lista - Tiempo ejecucion size: " + tiempo);
 	}
-
 }

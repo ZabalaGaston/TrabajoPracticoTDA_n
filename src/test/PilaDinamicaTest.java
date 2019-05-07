@@ -15,7 +15,7 @@ public class PilaDinamicaTest {
 		pila.push(1);
 		long endTime = System.currentTimeMillis();
 		long tiempo = endTime-startTime;
-		System.out.println("Tiempo ejecucion: "+tiempo);
+		System.out.println("Pila Dinamica - Tiempo ejecucion push:" + tiempo);
 		Assert.assertEquals(Integer.valueOf(1), pila.peek());	
 	}
 	
@@ -28,7 +28,7 @@ public class PilaDinamicaTest {
 		Integer prueba = (Integer) pila.pop();
 		long endTime = System.currentTimeMillis();
 		long tiempo = endTime-startTime;
-		System.out.println("Tiempo ejecucion: "+tiempo);
+		System.out.println("Pila Dinamica - Tiempo ejecucion pop:" + tiempo);
 		Assert.assertEquals(Integer.valueOf(2),prueba);
 	}
 	
@@ -42,7 +42,7 @@ public class PilaDinamicaTest {
 		Assert.assertEquals(Integer.valueOf(3), pila.peek());
 		long endTime = System.currentTimeMillis();
 		long tiempo = endTime-startTime;
-		System.out.println("Tiempo ejecucion: "+tiempo);
+		System.out.println("Pila Dinamica - Tiempo ejecucion peek:" + tiempo);
 	}
 	
 	@Test
@@ -52,7 +52,7 @@ public class PilaDinamicaTest {
 		Assert.assertEquals(true, pila.isEmpty());
 		long endTime = System.currentTimeMillis();
 		long tiempo = endTime-startTime;
-		System.out.println("Tiempo ejecucion: "+tiempo);
+		System.out.println("Pila Dinamica - Tiempo ejecucion isEmpty:" + tiempo);
 	}
 	
 	@Test
@@ -64,9 +64,7 @@ public class PilaDinamicaTest {
 		pila.empty();
 		long endTime = System.currentTimeMillis();
 		long tiempo = endTime-startTime;
-		System.out.println("Tiempo ejecucion: "+tiempo);
+		System.out.println("Pila Dinamica - Tiempo ejecucion empty:" + tiempo);
 		Assert.assertEquals(true, pila.isEmpty());
 	}
-
 }
-

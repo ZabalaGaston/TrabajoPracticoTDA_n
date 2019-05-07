@@ -21,7 +21,7 @@ public class PilaCLTest {
 		pilaCL.push(1);
 		long endTime = System.currentTimeMillis();
 		long tiempo = endTime-startTime;
-		System.out.println("Tiempo ejecucion: "+tiempo);
+		System.out.println("PilaCL - Tiempo ejecucion push: " + tiempo);
 		Assert.assertEquals(Integer.valueOf(1), pilaCL.peek());	
 	}
 	
@@ -33,7 +33,7 @@ public class PilaCLTest {
 		Integer prueba = (Integer) pilaCL.pop();
 		long endTime = System.currentTimeMillis();
 		long tiempo = endTime-startTime;
-		System.out.println("Tiempo ejecucion: "+tiempo);
+		System.out.println("PilaCL - Tiempo ejecucion pop: " + tiempo);
 		Assert.assertEquals(Integer.valueOf(2),prueba);
 	}
 	
@@ -46,7 +46,7 @@ public class PilaCLTest {
 		Assert.assertEquals(Integer.valueOf(3), pilaCL.peek());
 		long endTime = System.currentTimeMillis();
 		long tiempo = endTime-startTime;
-		System.out.println("Tiempo ejecucion: "+tiempo);
+		System.out.println("PilaCL - Tiempo ejecucion peek: " + tiempo);
 	}
 	
 	@Test
@@ -55,7 +55,7 @@ public class PilaCLTest {
 		Assert.assertEquals(true, pilaCL.isEmpty());
 		long endTime = System.currentTimeMillis();
 		long tiempo = endTime-startTime;
-		System.out.println("Tiempo ejecucion: "+tiempo);
+		System.out.println("PilaCL - Tiempo ejecucion isEmpty: " + tiempo);
 	}
 	
 	@Test
@@ -66,8 +66,7 @@ public class PilaCLTest {
 		pilaCL.empty();
 		long endTime = System.currentTimeMillis();
 		long tiempo = endTime-startTime;
-		System.out.println("Tiempo ejecucion: "+tiempo);
+		System.out.println("PilaCL - Tiempo ejecucion empty: " + tiempo);
 		Assert.assertEquals(true, pilaCL.isEmpty());
 	}
-
 }

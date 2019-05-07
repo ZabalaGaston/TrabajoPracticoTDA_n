@@ -22,30 +22,26 @@ public class TiemposTest {
 		double i = 0;
 		
 		long startTime = System.currentTimeMillis();
-		while(i<1000000)
-		{
+		while(i<1000000) {
 			estatica.offer(new Random().nextInt(0 + 9));
 			i++;
-		}long endTime = System.currentTimeMillis();
+		}
 		
-		long diferenciaEstatica = endTime-startTime;
-		
-		System.out.println("Cola estatica: "+diferenciaEstatica);
-		
+		long endTime = System.currentTimeMillis();
+		long diferenciaEstatica = endTime - startTime;
 		
 		i = 0;
 		
 		startTime = System.currentTimeMillis();
-		while(i<1000000)
-		{
+		while(i<1000000) {
 			dinamica.offer(new Random().nextInt(0 + 9));
 			i++;
 		}
 		endTime = System.currentTimeMillis();
 		
 		long diferenciaDinamica = endTime-startTime;
-		
-		System.out.println("Cola dinamica: "+diferenciaDinamica);
+		System.out.println("Rendimiento - Cola estatica: " + diferenciaEstatica);
+		System.out.println("Rendimiento - Cola dinamica: " + diferenciaDinamica);
 	}
 	
 	@Test
@@ -62,24 +58,21 @@ public class TiemposTest {
 			i++;
 		}
 		long endTime = System.currentTimeMillis();
-		
 		long diferenciaEstatica = endTime-startTime;
 		
-		System.out.println("Pila estatica: "+diferenciaEstatica);
 		
 		i = 0;
 		
 		startTime = System.currentTimeMillis();
-		while(i<1000000)
-		{
+		while(i<1000000) {
 			dinamica.push(new Random().nextInt(0 + 9));
 			i++;
 		}
 		endTime = System.currentTimeMillis();
 		
 		long diferenciaDinamica = endTime-startTime;
-		
-		System.out.println("Pila dinamica: "+diferenciaDinamica);
+		System.out.println("Rendimiento - Pila estatica: " + diferenciaEstatica);
+		System.out.println("Rendimiento - Pila dinamica: " + diferenciaDinamica);
 	}
 
 }

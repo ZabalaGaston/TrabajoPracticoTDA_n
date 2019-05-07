@@ -24,7 +24,7 @@ public class ColaCLTest {
 		Assert.assertEquals(Integer.valueOf(1), cola.poll());
 		long endTime = System.currentTimeMillis();
 		long tiempo = endTime-startTime;
-		System.out.println("Tiempo ejecucion: "+tiempo);
+		System.out.println("ColaCL - Tiempo ejecucion offer: " + tiempo);
 	}
 
 	@Test
@@ -38,11 +38,8 @@ public class ColaCLTest {
 		Assert.assertEquals(Integer.valueOf(5), cola.peek());
 		long endTime = System.currentTimeMillis();
 		long tiempo = endTime-startTime;
-		System.out.println("Tiempo ejecucion: "+tiempo);
+		System.out.println("ColaCL - Tiempo ejecucion peek: " + tiempo);
 	}
-	
-	
-	
 	
 	@Test
 	public void testPoll() {
@@ -56,9 +53,7 @@ public class ColaCLTest {
 		Assert.assertEquals(Integer.valueOf(3), cola.poll());
 		long endTime = System.currentTimeMillis();
 		long tiempo = endTime-startTime;
-		System.out.println("Tiempo ejecucion: "+tiempo);
+		System.out.println("ColaCL - Tiempo ejecucion poll: " + tiempo);
 		Assert.assertEquals(true, cola.isEmpty());
-		
 	}
-
 }
