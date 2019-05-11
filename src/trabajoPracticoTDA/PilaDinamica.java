@@ -11,42 +11,42 @@ public class PilaDinamica<T> implements Pila<T> {
 	@Override
 	public boolean push(T dato) {
 		NodoSimple<T> nuevoNodo = new NodoSimple<T>(dato);
-		nuevoNodo.setSiguiente(this.stack);
+		nuevoNodo.setSiguiente(this.getStack());
 		this.setStack(nuevoNodo);
 		return true;
 	}
 
 		@Override
 	public T pop() {
-		if(this.stack == null)
+		if(this.getStack() == null)
 			return null;
-		T informacion = stack.getInformacion();
-		this.stack = this.stack.getSiguiente();
+		T informacion = this.getStack().getInformacion();
+		this.setStack(this.getStack().getSiguiente());
 		return informacion;
 	}
 
 	@Override
 	public T peek() {
-		return this.stack.getInformacion();
+		return this.getStack().getInformacion();
 	}
 
 	@Override
 	public boolean isEmpty() {
-		return this.stack == null;
+		return this.getStack() == null;
 	}
 
 	@Override
 	public void empty() {
 		while(this.stack!=null)
-			this.stack = this.stack.getSiguiente();
+			this.setStack(this.getStack().getSiguiente());
 	}
 
 	public NodoSimple<T> getStack() {
-		return this.stack;
+		return this.getStack();
 	}
 
 	public void setStack(NodoSimple<T> nodo) {
-		this.stack = nodo;
+		this.setStack(nodo);
 	}
 
 
