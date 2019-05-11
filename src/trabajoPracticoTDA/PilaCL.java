@@ -1,5 +1,6 @@
 package trabajoPracticoTDA;
 
+@SuppressWarnings("rawtypes")
 public class PilaCL implements Pila{
 
 	private Lista lista;

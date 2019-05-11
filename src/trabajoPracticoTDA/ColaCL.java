@@ -1,10 +1,11 @@
 package trabajoPracticoTDA;
 
+@SuppressWarnings("rawtypes")
 public class ColaCL implements Cola {
 
 	private Lista lista;
 	
-	public ColaCL(){
+	public ColaCL() {
 		lista = new Lista();
 	}
 	
@@ -33,5 +34,4 @@ public class ColaCL implements Cola {
 	public void empty() {
 		lista.empty();
 	}
-
 }

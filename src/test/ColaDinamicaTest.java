@@ -12,10 +12,8 @@ public class ColaDinamicaTest {
 
 	@Before
 	public void setUp() {
-		
 		cola = new ColaDinamica();
 	}
-
 
 	@Test
 	public void testPeek() {
@@ -24,9 +22,8 @@ public class ColaDinamicaTest {
 		Assert.assertEquals(Integer.valueOf(1), cola.peek());
 		long endTime = System.currentTimeMillis();
 		long tiempo = endTime-startTime;
-		System.out.println("Tiempo ejecucion: "+tiempo);
+		System.out.println("Cola Dinamica - Tiempo ejecucion peek: " + tiempo);
 	}
-	
 	
 	@Test
 	public void testOffer() {
@@ -35,7 +32,7 @@ public class ColaDinamicaTest {
 		cola.offer(2);
 		long endTime = System.currentTimeMillis();
 		long tiempo = endTime-startTime;
-		System.out.println("Tiempo ejecucion: "+tiempo);
+		System.out.println("Cola Dinamica - Tiempo ejecucion offer: " + tiempo);
 		Assert.assertEquals(Integer.valueOf(1), cola.peek());
 	}
 	
@@ -48,7 +45,7 @@ public class ColaDinamicaTest {
 		Assert.assertEquals(Integer.valueOf(1), cola.poll());
 		long endTime = System.currentTimeMillis();
 		long tiempo = endTime-startTime;
-		System.out.println("Tiempo ejecucion: "+tiempo);
+		System.out.println("Cola Dinamica - Tiempo ejecucion poll: " + tiempo);
 	}
 	
 	@Test
@@ -57,7 +54,7 @@ public class ColaDinamicaTest {
 		Assert.assertEquals(true, cola.isEmpty());
 		long endTime = System.currentTimeMillis();
 		long tiempo = endTime-startTime;
-		System.out.println("Tiempo ejecucion: "+tiempo);
+		System.out.println("Cola Dinamica - Tiempo ejecucion isEmpty: " + tiempo);
 	}
 	
 	@Test
@@ -68,8 +65,7 @@ public class ColaDinamicaTest {
 		cola.empty();
 		long endTime = System.currentTimeMillis();
 		long tiempo = endTime-startTime;
-		System.out.println("Tiempo ejecucion: "+tiempo);
+		System.out.println("Cola Dinamica - Tiempo ejecucion empty: " + tiempo);
 		Assert.assertEquals(true, cola.isEmpty());
 	}
-
 }

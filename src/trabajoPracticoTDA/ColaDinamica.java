@@ -1,7 +1,12 @@
 package trabajoPracticoTDA;
 
 
+<<<<<<< HEAD
 public class ColaDinamica<T> implements Cola<T>{
+=======
+@SuppressWarnings("rawtypes")
+public class ColaDinamica implements Cola {
+>>>>>>> aed77de7d90b9898b540bcb9182e394e87dd41b4
 
 	private NodoSimple<T> inicio;
 	private NodoSimple<T> fin;
