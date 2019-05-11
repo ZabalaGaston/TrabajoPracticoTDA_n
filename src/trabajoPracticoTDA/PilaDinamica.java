@@ -49,14 +49,6 @@ public class PilaDinamica<T> implements Pila<T> {
 		this.stack = nodo;
 	}
 
-	public NodoSimple<T> getStack() {
-		return this.stack;
-	}
-
-	public void setStack(NodoSimple<T> nodo) {
-		this.stack = nodo;
-	}
-
 
 
 }
