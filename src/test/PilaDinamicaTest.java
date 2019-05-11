@@ -4,6 +4,7 @@ import org.junit.Test;
 
 import trabajoPracticoTDA.PilaDinamica;
 
+@SuppressWarnings({"rawtypes", "unchecked"})
 public class PilaDinamicaTest {
 	
 	private PilaDinamica pila;

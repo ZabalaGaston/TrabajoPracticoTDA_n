@@ -13,10 +13,12 @@ import trabajoPracticoTDA.PilaDinamica;
 import trabajoPracticoTDA.PilaEstatica;
 import trabajoPracticoTDA.PilaHL;
 
+@SuppressWarnings({"rawtypes", "unchecked"})
 public class PolimorfismoTest {
 
 	@Test
 	public void polimorfismoCola() {
+		
 		Cola cola = new ColaEstatica(10);
 		cola.offer(1);
 		cola.offer(2);
@@ -40,7 +42,7 @@ public class PolimorfismoTest {
 	
 	@Test
 	public void polimorfismoPila() {
-		Pila pila = new PilaEstatica(10);
+		Pila pila = new PilaEstatica(Object.class, 10);
 		pila.push(1);
 		pila.push(2);
 		pila.push("prueba");
@@ -60,5 +62,4 @@ public class PolimorfismoTest {
 		pila.push(2);
 		pila.push("prueba");
 	}
-
 }

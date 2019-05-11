@@ -1,5 +1,6 @@
 package trabajoPracticoTDA;
 
+@SuppressWarnings("rawtypes")
 public class ColaEstatica implements Cola {
 
 	private Object cola[];
@@ -26,12 +27,10 @@ public class ColaEstatica implements Cola {
 			return null;
 		Object object = new Object();
 		object = cola[inicio];
-		if(inicio == fin)
-		{
+		if(inicio == fin) {
 			inicio = 0;
 			fin = -1;
-		}
-		else if (inicio == cola.length-1)
+		} else if (inicio == cola.length-1)
 			inicio = 0;
 		else
 			inicio++;
@@ -51,8 +50,6 @@ public class ColaEstatica implements Cola {
 		return fin == -1;
 	}
 
-	
-	
 	@Override
 	public void empty() {
 		fin = -1;

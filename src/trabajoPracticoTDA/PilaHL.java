@@ -1,5 +1,6 @@
 package trabajoPracticoTDA;
 
+@SuppressWarnings("rawtypes")
 public class PilaHL extends Lista implements Pila{
 
 	public PilaHL() {
@@ -19,7 +20,5 @@ public class PilaHL extends Lista implements Pila{
 	@Override
 	public Object peek() {
 		return super.searchAt(super.size());
-	}
-
-	
+	}	
 }
