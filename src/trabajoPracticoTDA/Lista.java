@@ -1,85 +1,92 @@
 package trabajoPracticoTDA;
 
-import java.util.ArrayList;
-import java.util.Collections;
 
-public class Lista {
+public class Lista<T> {
 
-	private ArrayList<Object> objects;
-	
+	private NodoDoble<T> actual;	
+
 	public Lista() {
-		 objects = new ArrayList<Object> ();
+		this.setActual(null);
 	}
 
-	public boolean pushBack(Object dato) {//Inserta un elemento al final
-		return objects.add(dato);
+	public boolean pushBack(T dato) {
+		NodoDoble<T> nodoNuevo = new NodoDoble<T>();
+		while(this.getActual()!=null && this.getActual().getSiguiente()!=null)
+			this.setActual(this.getActual().getSiguiente());
+		if(this.getActual()!=null)
+		{
+			this.getActual().setSiguiente(nodoNuevo);
+			nodoNuevo.setAnterior(this.getActual());
+		}
+		this.setActual(nodoNuevo);
+		return true;	
 	}
 	
-	public Object popBack() {//retorna y borra el elemento del final
-		if (!objects.isEmpty()) {
-			Object n = objects.get(objects.size()-1);
-			objects.remove(objects.size()-1);
-			return n;			
-		}
+	public T popBack() {
+		if(this.getActual() == null)
+			return null;
+		while(this.getActual().getSiguiente()!=null)
+			this.setActual(this.getActual().getSiguiente());
+		NodoDoble<T> nodoEliminar = this.getActual();
+		if(this.getActual().getAnterior() != null)
+			this.getActual().getAnterior().setSiguiente(null);
+		else
+			this.setActual(null);
+		return nodoEliminar.getInformacion();		
+	}
+	
+	public boolean pushFront(T dato) {
+		
+		return true;
+	}
+	
+	public T popFront() {
+		
 		return null;
 	}
 	
-	public boolean pushFront(Object dato) {
-		int n = objects.size();
-		objects.add(0,dato);
-		return n != objects.size();
-	}
-	
-	public Object popFront() {
-		Object n = objects.get(0);
-		objects.remove(0);
-		return n;
-	}
-	
-	public boolean remove(Object dato) {
-		return objects.remove(dato);
+	public boolean remove(T dato) {
+		return true;
 	}
 	
 	public void reverse() {
-		 Collections.reverse(objects);
+		 
 	}
 	
-	public boolean insertarAt(int posicion, Object dato) {
+	public boolean insertarAt(int posicion, T dato) {
 
-		int n = objects.size();
-		objects.add(posicion, dato);		
-		return n != objects.size();
+		return true;
 	}
 	
-	public boolean eraseAt(int posicion) {//eliminar por posicion
-		int n = objects.size();
-		objects.remove(posicion);
-		return n != objects.size();
+	public boolean eraseAt(int posicion) {
+		return true;
 	}
 	
 	public boolean isEmpty() {
-		return objects.isEmpty();
+		return true;
 	}
 	
 	public void empty() {
-		objects.clear();
+		
 	}
 	
-	public Object search(Object dato) {
-		for (Object obj : objects) {
-			if (obj.equals(dato))
-				return obj;
-		}
+	public T search(Object dato) {
 		return null;
 	}
 	
-	public Object searchAt(int posicion) {
-		if(objects.size()>= posicion)
-			return objects.get(posicion-1);		
+	public T searchAt(int posicion) {	
 		return null;
 	}
 	
 	public int size() {
-		return objects.size();
+		return 1;
+	}
+
+	public NodoDoble<T> getActual() {
+		return actual;
+	}
+
+	public void setActual(NodoDoble<T> actual) {
+		this.actual = actual;
 	}
 }
