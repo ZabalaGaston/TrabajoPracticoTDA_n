@@ -1,10 +1,10 @@
 package trabajoPracticoTDA;
 
-public interface Cola {
+public interface Cola<T> {
 
-	public boolean offer(Object dato);
-	public Object poll();
-	public Object peek();
+	public boolean offer(T dato);
+	public T poll();
+	public T peek();
 	public boolean isEmpty();
 	public void empty();
 }

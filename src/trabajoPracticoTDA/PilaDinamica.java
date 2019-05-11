@@ -1,46 +1,55 @@
 package trabajoPracticoTDA;
-import java.util.ArrayList;
 
-public class PilaDinamica implements Pila{
-
-	private ArrayList<Object> objects;
+public class PilaDinamica<T> implements Pila<T>{
 	
+	private NodoSimple<T> stack;
+
 	public PilaDinamica() {
-		 objects = new ArrayList<Object> ();
+		this.stack = null;
+	}
+	
+	@Override
+	public boolean push(T dato) {
+		NodoSimple<T> nuevoNodo = new NodoSimple<T>(dato);
+		nuevoNodo.setSiguiente(this.stack);
+		this.setStack(nuevoNodo);
+		return true;
 	}
 
-	public PilaDinamica(ArrayList<Object> objects) {
-		super();
-		this.objects = objects;
-	}
-	
-	@Override
-	public boolean push(Object dato) {
-		return objects.add(dato);
+		@Override
+	public T pop() {
+		if(this.stack == null)
+			return null;
+		T informacion = stack.getInformacion();
+		this.stack = this.stack.getSiguiente();
+		return informacion;
 	}
 
 	@Override
-	public Object pop() { //desapila el dato apuntado por el tope de la pila
-		if (!objects.isEmpty()) {
-			Object n = objects.get(objects.size()-1);
-			objects.remove(objects.size()-1);
-			return n;			
-		}
-		return null;
+	public T peek() {
+		return this.stack.getInformacion();
 	}
-	
-	@Override
-	public Object peek() {
-		return objects.get(objects.size()-1);
-	}
-	
+
 	@Override
 	public boolean isEmpty() {
-		return objects.isEmpty();
+		return this.stack == null;
 	}
-	
+
 	@Override
-	public void empty(){
-		objects = new ArrayList<Object>();
+	public void empty() {
+		while(this.stack!=null)
+			this.stack = this.stack.getSiguiente();
+		
 	}
+
+	public NodoSimple<T> getStack() {
+		return this.stack;
+	}
+
+	public void setStack(NodoSimple<T> nodo) {
+		this.stack = nodo;
+	}
+
+
+	
 }
