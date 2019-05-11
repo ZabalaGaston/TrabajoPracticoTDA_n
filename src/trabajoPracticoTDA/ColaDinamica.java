@@ -1,51 +1,74 @@
 package trabajoPracticoTDA;
 
-import java.util.ArrayList;
 
-public class ColaDinamica implements Cola{
+public class ColaDinamica<T> implements Cola<T>{
 
-	private ArrayList<Object> objects;
-	
+	private NodoSimple<T> inicio;
+	private NodoSimple<T> fin;
 	public ColaDinamica() {
-		 objects = new ArrayList<Object> ();
+		this.setInicio(null);
+		this.setFin(null);
 	}
 
-	public ColaDinamica(ArrayList<Object> objects) {
-		super();
-		this.objects = objects;
+	
+	@Override
+	public boolean offer(T dato) {
+		NodoSimple<T> nuevoNodo = new NodoSimple<T>(dato);
+		if(this.getInicio() == null)
+			this.setInicio(nuevoNodo);
+		else
+			this.getFin().setSiguiente(nuevoNodo);
+		this.setFin(nuevoNodo);
+		return true;
 	}
 
 	@Override
-	public boolean offer(Object dato) {
-		return objects.add(dato);
+	public T poll() {
+		if(this.getInicio() == null)
+			return null;
+		NodoSimple<T> nodoEliminar = this.getInicio();
+		this.setInicio(nodoEliminar.getSiguiente());
+		return nodoEliminar.getInformacion();
 	}
 
 	@Override
-	public Object poll() {
-		if (!objects.isEmpty()) {
-			Object n = objects.get(0);
-			objects.remove(0);
-			return n;
-		}
-		return null;
-	}
-
-	@Override
-	public Object peek() {
-		if (!objects.isEmpty()) {
-			Object n = objects.get(0);
-			return n;	
-		}
-		return null;
+	public T peek() {
+		return this.getInicio().getInformacion();
 	}
 
 	@Override
 	public boolean isEmpty() {
-		return objects.isEmpty();
+		return this.getInicio() == null;
 	}
 
 	@Override
 	public void empty() {
-		objects.clear();
+		while(this.getInicio()!=null)
+			this.setInicio( this.getInicio().getSiguiente());		
 	}
+
+
+
+	public NodoSimple<T> getInicio() {
+		return inicio;
+	}
+
+
+
+	public void setInicio(NodoSimple<T> inicio) {
+		this.inicio = inicio;
+	}
+
+
+
+	public NodoSimple<T> getFin() {
+		return fin;
+	}
+
+
+
+	public void setFin(NodoSimple<T> fin) {
+		this.fin = fin;
+	}
+
 }
