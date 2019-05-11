@@ -5,13 +5,14 @@ import org.junit.Test;
 
 import trabajoPracticoTDA.PilaEstatica;
 
+@SuppressWarnings({"rawtypes", "unchecked"})
 public class PilaTest {
 	
 	private PilaEstatica pila;
-
+	
 	@Test
 	public void testPush() {
-		pila = new PilaEstatica(10);
+		pila = new PilaEstatica(Integer.class, 10);
 		long startTime = System.currentTimeMillis();
 		pila.push(1);
 		long endTime = System.currentTimeMillis();
@@ -22,7 +23,7 @@ public class PilaTest {
 	
 	@Test
 	public void testPop() {
-		pila = new PilaEstatica(10);
+		pila = new PilaEstatica(Integer.class, 10);
 		pila.push(1);
 		pila.push(2);
 		long startTime = System.currentTimeMillis();
@@ -34,7 +35,7 @@ public class PilaTest {
 	
 	@Test
 	public void testPeek() {
-		pila = new PilaEstatica(10);		
+		pila = new PilaEstatica(Integer.class, 10);	
 		pila.push(1);
 		pila.push(2);
 		pila.push(3);
@@ -47,7 +48,7 @@ public class PilaTest {
 	
 	@Test
 	public void testIsEmpty () {
-		pila = new PilaEstatica(10);
+		pila = new PilaEstatica(Integer.class, 10);
 		long startTime = System.currentTimeMillis();
 		Assert.assertEquals(true, pila.isEmpty());
 		long endTime = System.currentTimeMillis();
@@ -57,7 +58,7 @@ public class PilaTest {
 	
 	@Test
 	public void testEmpty () {
-		pila = new PilaEstatica(10);		
+		pila = new PilaEstatica(Integer.class, 10);	
 		pila.push(1);
 		pila.push(2);
 		long startTime = System.currentTimeMillis();

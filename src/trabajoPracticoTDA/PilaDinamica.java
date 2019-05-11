@@ -1,6 +1,6 @@
 package trabajoPracticoTDA;
 
-public class PilaDinamica<T> implements Pila<T>{
+public class PilaDinamica<T> implements Pila<T> {
 	
 	private NodoSimple<T> stack;
 
@@ -39,7 +39,6 @@ public class PilaDinamica<T> implements Pila<T>{
 	public void empty() {
 		while(this.stack!=null)
 			this.stack = this.stack.getSiguiente();
-		
 	}
 
 	public NodoSimple<T> getStack() {
@@ -49,7 +48,4 @@ public class PilaDinamica<T> implements Pila<T>{
 	public void setStack(NodoSimple<T> nodo) {
 		this.stack = nodo;
 	}
-
-
-	
 }

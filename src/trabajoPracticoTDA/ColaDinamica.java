@@ -2,7 +2,8 @@ package trabajoPracticoTDA;
 
 import java.util.ArrayList;
 
-public class ColaDinamica implements Cola{
+@SuppressWarnings("rawtypes")
+public class ColaDinamica implements Cola {
 
 	private ArrayList<Object> objects;
 	

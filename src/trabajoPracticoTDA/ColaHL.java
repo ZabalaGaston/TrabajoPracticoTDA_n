@@ -1,8 +1,8 @@
 package trabajoPracticoTDA;
 
+@SuppressWarnings("rawtypes")
 public class ColaHL extends Lista implements Cola{
 
-	
 	public ColaHL() {
 		super();
 	}
@@ -32,7 +32,4 @@ public class ColaHL extends Lista implements Cola{
 	public void empty() {
 		super.empty();
 	}
-
-	
-
 }

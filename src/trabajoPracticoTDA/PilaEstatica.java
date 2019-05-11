@@ -25,7 +25,7 @@ public class PilaEstatica<T> implements Pila<T> {
 
 	@Override
 	public T pop() { //desapila el dato apuntado por el tope de la pila
-		if(tope!=-1){
+		if(tope!=-1) {
 			return pila[tope--];
 		}		
 		return null;
@@ -33,9 +33,9 @@ public class PilaEstatica<T> implements Pila<T> {
 	
 	@Override
 	public T peek() {
-		if(tope!=-1){
+		if(tope!=-1) {
 			return pila[tope];
-		}		
+		}
 		return null;
 	}
 	
@@ -45,8 +45,7 @@ public class PilaEstatica<T> implements Pila<T> {
 	}
 	
 	@Override
-	public void empty(){
+	public void empty() {
 		tope = -1;
 	}
-	
 }
