@@ -1,5 +1,6 @@
 package test;
 import org.junit.Assert;
+import org.junit.Ignore;
 import org.junit.Test;
 
 import trabajoPracticoTDA.PilaDinamica;
@@ -13,7 +14,7 @@ public class PilaDinamicaTest {
 	public void testPush() {
 		pila = new PilaDinamica();
 		long startTime = System.currentTimeMillis();
-		pila.push(1);
+		pila.push(Integer.valueOf(1));
 		long endTime = System.currentTimeMillis();
 		long tiempo = endTime-startTime;
 		System.out.println("Pila Dinamica - Tiempo ejecucion push:" + tiempo);
@@ -23,8 +24,8 @@ public class PilaDinamicaTest {
 	@Test
 	public void testPop() {
 		pila = new PilaDinamica();
-		pila.push(1);
-		pila.push(2);
+		pila.push(Integer.valueOf(1));
+		pila.push(Integer.valueOf(2));
 		long startTime = System.currentTimeMillis();
 		Integer prueba = (Integer) pila.pop();
 		long endTime = System.currentTimeMillis();
@@ -36,9 +37,9 @@ public class PilaDinamicaTest {
 	@Test
 	public void testPeek() {
 		pila = new PilaDinamica();		
-		pila.push(1);
-		pila.push(2);
-		pila.push(3);
+		pila.push(Integer.valueOf(1));
+		pila.push(Integer.valueOf(2));
+		pila.push(Integer.valueOf(3));
 		long startTime = System.currentTimeMillis();
 		Assert.assertEquals(Integer.valueOf(3), pila.peek());
 		long endTime = System.currentTimeMillis();
@@ -59,8 +60,8 @@ public class PilaDinamicaTest {
 	@Test
 	public void testEmpty () {
 		pila = new PilaDinamica();
-		pila.push(1);
-		pila.push(2);
+		pila.push(Integer.valueOf(1));
+		pila.push(Integer.valueOf(2));
 		long startTime = System.currentTimeMillis();
 		pila.empty();
 		long endTime = System.currentTimeMillis();

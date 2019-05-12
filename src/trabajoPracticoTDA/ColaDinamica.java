@@ -5,71 +5,62 @@ public class ColaDinamica<T> implements Cola<T>{
 
 	private NodoSimple<T> inicio;
 	private NodoSimple<T> fin;
+	
 	public ColaDinamica() {
-		this.setInicio(null);
-		this.setFin(null);
+		this.inicio = null;
+		this.fin = null;
 	}
 
-	
 	@Override
 	public boolean offer(T dato) {
 		NodoSimple<T> nuevoNodo = new NodoSimple<T>(dato);
-		if(this.getInicio() == null)
-			this.setInicio(nuevoNodo);
+		if(this.inicio == null)
+			this.inicio = nuevoNodo;
 		else
-			this.getFin().setSiguiente(nuevoNodo);
-		this.setFin(nuevoNodo);
+			this.fin.setSiguiente(nuevoNodo);
+		this.fin = nuevoNodo;
 		return true;
 	}
 
 	@Override
 	public T poll() {
-		if(this.getInicio() == null)
+		if(this.inicio == null)
 			return null;
-		NodoSimple<T> nodoEliminar = this.getInicio();
-		this.setInicio(nodoEliminar.getSiguiente());
+		NodoSimple<T> nodoEliminar = this.inicio;
+		this.inicio = nodoEliminar.getSiguiente();
 		return nodoEliminar.getInformacion();
 	}
 
 	@Override
 	public T peek() {
-		return this.getInicio().getInformacion();
+		return this.inicio.getInformacion();
 	}
 
 	@Override
 	public boolean isEmpty() {
-		return this.getInicio() == null;
+		return this.inicio == null;
 	}
 
 	@Override
 	public void empty() {
-		while(this.getInicio()!=null)
-			this.setInicio( this.getInicio().getSiguiente());		
+		while(this.inicio != null)
+			this.inicio = this.inicio.getSiguiente();		
 	}
-
-
 
 	public NodoSimple<T> getInicio() {
 		return inicio;
 	}
 
-
-
 	public void setInicio(NodoSimple<T> inicio) {
 		this.inicio = inicio;
 	}
-
-
 
 	public NodoSimple<T> getFin() {
 		return fin;
 	}
 
-
-
 	public void setFin(NodoSimple<T> fin) {
 		this.fin = fin;
 	}
 
-	
 }
