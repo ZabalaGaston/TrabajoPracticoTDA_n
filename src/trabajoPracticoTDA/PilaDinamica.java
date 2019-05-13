@@ -16,7 +16,7 @@ public class PilaDinamica<T> implements Pila<T> {
 		return true;
 	}
 
-		@Override
+	@Override
 	public T pop() {
 		if(this.stack == null)
 			return null;
@@ -48,15 +48,5 @@ public class PilaDinamica<T> implements Pila<T> {
 	public void setStack(NodoSimple<T> nodo) {
 		this.stack = nodo;
 	}
-
-	public NodoSimple<T> getStack() {
-		return this.stack;
-	}
-
-	public void setStack(NodoSimple<T> nodo) {
-		this.stack = nodo;
-	}
-
-
 
 }
