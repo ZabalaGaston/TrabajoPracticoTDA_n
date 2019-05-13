@@ -6,6 +6,7 @@ import org.junit.Test;
 
 import trabajoPracticoTDA.ColaCL;
 
+@SuppressWarnings({"rawtypes", "unchecked"})
 public class ColaHLTest {
 	
 	private ColaCL cola;

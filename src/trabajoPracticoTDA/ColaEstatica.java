@@ -2,12 +2,12 @@ package trabajoPracticoTDA;
 
 import java.lang.reflect.Array;
 
+@SuppressWarnings("unchecked")
 public class ColaEstatica<T> implements Cola<T> {
 
 	private T cola[];
 	private int inicio,fin;
 
-	@SuppressWarnings("unchecked")
 	public ColaEstatica(Class<T> cl, int size) {
 		cola = (T[]) Array.newInstance(cl, size);
         inicio = 0;

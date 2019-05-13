@@ -6,6 +6,7 @@ import org.junit.Test;
 
 import trabajoPracticoTDA.PilaCL;
 
+@SuppressWarnings({"rawtypes","unchecked"})
 public class PilaCLTest {
 
 	private PilaCL pilaCL;

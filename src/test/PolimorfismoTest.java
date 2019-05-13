@@ -19,7 +19,7 @@ public class PolimorfismoTest {
 	@Test
 	public void polimorfismoCola() {
 		
-		Cola cola = new ColaEstatica(10);
+		Cola cola = new ColaEstatica(Object.class, 10);
 		cola.offer(1);
 		cola.offer(2);
 		cola.offer("prueba");

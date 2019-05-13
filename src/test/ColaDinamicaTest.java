@@ -6,6 +6,7 @@ import org.junit.Test;
 
 import trabajoPracticoTDA.ColaDinamica;
 
+@SuppressWarnings({"rawtypes", "unchecked"})
 public class ColaDinamicaTest {
 	
 	private ColaDinamica cola;

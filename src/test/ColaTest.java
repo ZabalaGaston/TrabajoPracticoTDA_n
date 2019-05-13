@@ -6,13 +6,14 @@ import org.junit.Test;
 
 import trabajoPracticoTDA.ColaEstatica;
 
+@SuppressWarnings({"rawtypes", "unchecked"})
 public class ColaTest {
 	
 	private ColaEstatica cola;
 
 	@Before
 	public void setUp() {	
-		cola = new ColaEstatica(10);
+		cola = new ColaEstatica(Object.class, 10);
 	}
 
 	@Test

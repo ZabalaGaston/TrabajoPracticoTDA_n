@@ -1,6 +1,6 @@
 package test;
 import org.junit.Assert;
-import org.junit.Ignore;
+import org.junit.Before;
 import org.junit.Test;
 
 import trabajoPracticoTDA.PilaDinamica;
@@ -10,9 +10,12 @@ public class PilaDinamicaTest {
 	
 	private PilaDinamica pila;
 
+	@Before
+	public void setUp() {
+		pila = new PilaDinamica();	
+	}
 	@Test
 	public void testPush() {
-		pila = new PilaDinamica();
 		long startTime = System.currentTimeMillis();
 		pila.push(Integer.valueOf(1));
 		long endTime = System.currentTimeMillis();
@@ -23,7 +26,6 @@ public class PilaDinamicaTest {
 	
 	@Test
 	public void testPop() {
-		pila = new PilaDinamica();
 		pila.push(Integer.valueOf(1));
 		pila.push(Integer.valueOf(2));
 		long startTime = System.currentTimeMillis();
@@ -36,7 +38,6 @@ public class PilaDinamicaTest {
 	
 	@Test
 	public void testPeek() {
-		pila = new PilaDinamica();		
 		pila.push(Integer.valueOf(1));
 		pila.push(Integer.valueOf(2));
 		pila.push(Integer.valueOf(3));
@@ -49,7 +50,6 @@ public class PilaDinamicaTest {
 	
 	@Test
 	public void testIsEmpty () {
-		pila = new PilaDinamica();
 		long startTime = System.currentTimeMillis();
 		Assert.assertEquals(true, pila.isEmpty());
 		long endTime = System.currentTimeMillis();
@@ -59,7 +59,6 @@ public class PilaDinamicaTest {
 	
 	@Test
 	public void testEmpty () {
-		pila = new PilaDinamica();
 		pila.push(Integer.valueOf(1));
 		pila.push(Integer.valueOf(2));
 		long startTime = System.currentTimeMillis();

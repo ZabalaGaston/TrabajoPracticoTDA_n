@@ -4,8 +4,10 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
+import trabajoPracticoTDA.PilaDinamica;
 import trabajoPracticoTDA.PilaHL;
 
+@SuppressWarnings({"rawtypes", "unchecked"})
 public class PilaHLTest {
 
 	private PilaHL pilaHL;
