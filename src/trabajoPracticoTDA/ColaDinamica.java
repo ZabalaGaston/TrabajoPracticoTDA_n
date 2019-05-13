@@ -1,6 +1,5 @@
 package trabajoPracticoTDA;
 
-
 public class ColaDinamica<T> implements Cola<T>{
 
 	private NodoSimple<T> inicio;

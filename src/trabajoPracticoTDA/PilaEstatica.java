@@ -9,7 +9,7 @@ public class PilaEstatica<T> implements Pila<T> {
 
 	@SuppressWarnings("unchecked")
 	public PilaEstatica(Class<T> cl, int size) {
-		T[] pila = (T[]) Array.newInstance(cl, size);
+		pila = (T[]) Array.newInstance(cl, size);
 		this.pila = pila;
         tope = -1;
 	}

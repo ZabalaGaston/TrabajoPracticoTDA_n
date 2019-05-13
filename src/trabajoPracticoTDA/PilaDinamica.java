@@ -16,7 +16,7 @@ public class PilaDinamica<T> implements Pila<T> {
 		return true;
 	}
 
-		@Override
+	@Override
 	public T pop() {
 		if(this.stack == null)
 			return null;

@@ -1,27 +1,26 @@
 package trabajoPracticoTDA;
 
-@SuppressWarnings("rawtypes")
-public class ColaCL implements Cola {
+public class ColaCL<T> implements Cola<T> {
 
-	private Lista lista;
+	private ListaSimple<T> lista;
 	
 	public ColaCL() {
-		lista = new Lista();
+		lista = new ListaSimple<T>();
 	}
 	
 	@Override
-	public boolean offer(Object dato) {
+	public boolean offer(T dato) {
 		return lista.pushBack(dato);
 	}
 
 	@Override
-	public Object poll() {
+	public T poll() {
 		return lista.popFront();
 	}
 
 	@Override
-	public Object peek() {
-		Object dato = lista.searchAt(1);
+	public T peek() {
+		T dato = lista.searchAt(1);
 		return dato;
 	}
 

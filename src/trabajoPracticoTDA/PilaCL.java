@@ -1,26 +1,25 @@
 package trabajoPracticoTDA;
 
-@SuppressWarnings("rawtypes")
-public class PilaCL implements Pila{
+public class PilaCL<T> implements Pila<T>{
 
-	private Lista lista;
+	private ListaSimple<T> lista;
 
 	public PilaCL() {
-		lista = new Lista();
+		lista = new ListaSimple<T>();
 	}
 
 	@Override
-	public boolean push(Object dato) {
+	public boolean push(T dato) {
 		return lista.pushBack(dato);
 	}
 
 	@Override
-	public Object pop() {
+	public T pop() {
 		return lista.popBack();
 	}
 
 	@Override
-	public Object peek() {
+	public T peek() {
 		return lista.searchAt(lista.size());
 	}
 

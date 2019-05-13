@@ -1,19 +1,21 @@
 package trabajoPracticoTDA;
 
-@SuppressWarnings("rawtypes")
-public class ColaEstatica implements Cola {
+import java.lang.reflect.Array;
 
-	private Object cola[];
+public class ColaEstatica<T> implements Cola<T> {
+
+	private T cola[];
 	private int inicio,fin;
 
-	public ColaEstatica(int size) {
-		cola = new Object[size];
+	@SuppressWarnings("unchecked")
+	public ColaEstatica(Class<T> cl, int size) {
+		cola = (T[]) Array.newInstance(cl, size);
         inicio = 0;
         fin = -1;
 	}
 	
 	@Override
-	public boolean offer(Object dato) {
+	public boolean offer(T dato) {
 		if((inicio == 0 && fin == cola.length-1) || (fin == inicio-1 && fin!=-1))
 			return false;
 		fin = fin==cola.length-1?0:fin+1;
@@ -22,11 +24,10 @@ public class ColaEstatica implements Cola {
 	}
 
 	@Override
-	public Object poll() {
+	public T poll() {
 		if (fin == -1)
 			return null;
-		Object object = new Object();
-		object = cola[inicio];
+		T object = cola[inicio];
 		if(inicio == fin) {
 			inicio = 0;
 			fin = -1;
@@ -38,7 +39,7 @@ public class ColaEstatica implements Cola {
 	}
 
 	@Override
-	public Object peek() {
+	public T peek() {
 		if (fin == -1)
 			return null;
 		return cola[inicio];

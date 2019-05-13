@@ -1,25 +1,24 @@
 package trabajoPracticoTDA;
 
-@SuppressWarnings("rawtypes")
-public class ColaHL extends Lista implements Cola{
+public class ColaHL<T> extends ListaSimple<T> implements Cola<T>{
 
 	public ColaHL() {
 		super();
 	}
 
 	@Override
-	public boolean offer(Object dato) {
+	public boolean offer(T dato) {
 		return super.pushBack(dato);
 	}
 
 	@Override
-	public Object poll() {
+	public T poll() {
 		return super.popFront();
 	}
 
 	@Override
-	public Object peek() {
-		Object dato = super.searchAt(1);
+	public T peek() {
+		T dato = super.searchAt(1);
 		return dato;
 	}
 
